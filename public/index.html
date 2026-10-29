@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta name="shopify-api-key" content="__SHOPIFY_API_KEY__">
+  <script src="https://cdn.shopify.com/shopifycloud/app-bridge.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="referrer" content="no-referrer">
+  <title>ImportGiant — Product migration</title>
+  <link rel="stylesheet" href="/static/style.css">
+  <script src="/static/app.js" defer></script>
+</head>
+<body>
+  <div class="layout">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M6 10.5 16 5l10 5.5v11L16 27 6 21.5z" stroke="currentColor" stroke-width="1.8"/><path d="M6 10.5 16 16l10-5.5M16 16v11" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></span><div><strong>ImportGiant</strong><span>PRODUCT MIGRATION</span></div></div>
+      <div class="top-right"><span class="top-label">A more thoughtful move</span><span id="connection-pill" class="pill subtle"><span class="dot"></span> Connecting</span></div>
+    </header>
+
+    <main class="shell">
+      <div class="breadcrumb">WORKSPACE <span>/</span> PRODUCT MIGRATION</div>
+      <div id="alert" class="alert" role="status" hidden></div>
+      <section class="hero">
+        <div class="hero-copy"><span class="eyebrow"><span class="eyebrow-dot"></span> THE IMPORTGIANT WORKSPACE</span><h1>Move products.<br><em>Keep the details.</em></h1><p>Bring your catalog to its next home with a careful, review-first migration.</p><div class="hero-tags"><span><b>✓</b> Products &amp; variants</span><span><b>✓</b> Image files</span><span><b>✓</b> Product metafields</span></div></div>
+        <div class="hero-art" aria-hidden="true"><div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div><div class="art-spark spark-one">✳</div><div class="art-spark spark-two">✦</div><div class="art-card"><div class="art-card-top"><span class="art-box">▧</span><span class="art-lines"><i></i><i></i></span><span class="art-mini-dot"></span></div><div class="art-divider"></div><div class="art-row"><span>Products</span><span class="art-chip">READY</span></div><div class="art-row"><span>Images &amp; details</span><span class="art-check">✓</span></div><div class="art-progress"><i></i></div></div><div class="art-floating"><span>↗</span></div></div>
+      </section>
+
+      <section class="journey" aria-label="Migration steps"><div class="journey-step active"><b>01</b><div><strong>Export</strong><small>From your source store</small></div></div><span class="journey-line"></span><div class="journey-step"><b>02</b><div><strong>Review</strong><small>Verify your package</small></div></div><span class="journey-line"></span><div class="journey-step"><b>03</b><div><strong>Import</strong><small>Into your destination</small></div></div></section>
+
+      <div class="section-heading"><div><span class="section-kicker">YOUR MIGRATION</span><h2 id="workspace-title">Getting your workspace ready</h2><p id="workspace-subtitle">Connecting securely to your Shopify session.</p></div><span id="role-badge" class="role-badge">CONNECTING</span></div>
+
+      <div id="workspace" class="workspace" hidden>
+        <section id="source-panel" class="card action-card" hidden>
+          <div class="card-title"><div class="icon-tile green"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3v11m0 0 4-4m-4 4-4-4M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><span class="section-kicker">STEP 01 · SOURCE</span><h3>Create your package</h3></div></div>
+          <p class="muted">Read product details and download a portable ZIP with image files and accessible product metafield values.</p>
+          <div class="store-box"><span class="store-icon">S</span><div><small>CONNECTED SOURCE</small><strong class="shop-name">—</strong></div><span class="mini-pill">READ ONLY</span></div>
+          <div class="safety-note"><span>◎</span><p><strong>Your source stays untouched.</strong> This app can only read from this store. Shopify runs a background bulk query.</p></div>
+          <button id="export-btn" class="button primary"><span>Start product export</span><span>↗</span></button>
+          <div class="footnote">Requires read-only products and inventory access.</div>
+        </section>
+
+        <section id="destination-panel" class="card action-card" hidden>
+          <div class="card-title"><div class="icon-tile peach"><svg viewBox="0 0 24 24" fill="none"><path d="M12 16V5m0 0L8 9m4-4 4 4M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div><div><span class="section-kicker">STEP 02 · DESTINATION</span><h3>Review a package</h3></div></div>
+          <p class="muted">Choose a package from your source. We’ll check the contents before you decide whether to import.</p>
+          <div class="store-box"><span class="store-icon peach-icon">S</span><div><small>DESTINATION STORE</small><strong class="shop-name">—</strong></div><span class="mini-pill peach-pill">WRITE ACCESS</span></div>
+          <label class="upload-zone" for="package-file"><span class="upload-icon">↥</span><strong id="file-label">Choose a product ZIP</strong><small>Only packages created by this app or Porter</small><input type="file" id="package-file" accept=".zip,application/zip" hidden></label>
+          <button id="review-btn" class="button dark" disabled><span>Review package</span><span>→</span></button>
+          <div class="footnote">Nothing is written to Shopify during review.</div>
+        </section>
+
+        <section class="card insight-card"><div class="card-topline"><div><span class="section-kicker">BEFORE YOU BEGIN</span><h3>Made to move safely.</h3></div><span class="card-star">✳</span></div><div class="insight-list"><div><span class="insight-index">01</span><div><strong>See exactly what’s included</strong><p>Review products, variants, images and product metafields before import.</p></div></div><div><span class="insight-index">02</span><div><strong>Existing products stay as they are</strong><p>Matching destination handles are skipped; new products are created as drafts.</p></div></div><div><span class="insight-index">03</span><div><strong>Know what needs attention</strong><p>A report calls out unsupported or unresolved fields and media warnings.</p></div></div></div><div class="insight-bottom"><span class="tiny-seal">✓</span><span><strong>Separate stores. Separate permissions.</strong><br>Source access and destination writes are isolated.</span></div></section>
+      </div>
+
+      <section id="review-section" class="card review-card" hidden>
+        <div class="review-heading"><div><span class="section-kicker">PACKAGE REVIEW</span><h3 id="review-name">—</h3><p id="review-source" class="muted">—</p></div><span class="pill success"><span class="dot"></span> Checks passed</span></div>
+        <div id="counts" class="counts"></div><div id="review-notes" class="review-notes"></div>
+        <div id="confirm-area" class="confirm-area" hidden><div class="confirm-heading"><strong>Ready to create draft products?</strong><span>Shopify writes happen only after confirmation.</span></div><label for="confirm-domain">Type the destination store’s myshopify.com domain</label><input id="confirm-domain" class="input" type="text" autocomplete="off" spellcheck="false" placeholder="your-store.myshopify.com"><label class="check-row"><input id="confirm-ack" type="checkbox"><span>I understand this creates new products as drafts in the destination store.</span></label><button id="import-btn" class="button primary" disabled><span>Confirm &amp; start import</span><span>↗</span></button></div>
+      </section>
+
+      <section class="card activity-card"><div class="activity-heading"><div><span class="section-kicker">YOUR ACTIVITY</span><h3>Migration activity</h3><p class="muted">Follow progress and download your files.</p></div><button class="refresh" id="refresh-btn" aria-label="Refresh activity">↻</button></div><div id="activity-list" class="activity-list"><div class="empty-state"><span>↗</span><strong>Your journey starts here.</strong><p>When you start a migration, the details will appear here.</p></div></div></section>
+      <div class="disclaimer"><span>i</span><p><strong>Experimental integration.</strong> Not yet verified with a live Shopify store. Packages are unencrypted. Metafield definitions, some references, inventory quantities and video/3D media need separate handling.</p></div>
+      <footer><span>IMPORTGIANT <b>✳</b> BUILT FOR A BETTER MOVE</span><span>PRODUCT MIGRATION WORKSPACE</span></footer>
+    </main>
+  </div>
+</body>
+</html>

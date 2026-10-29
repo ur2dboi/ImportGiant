@@ -1,0 +1,10 @@
+{
+  "name": "importgiant-shopify-migration",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Experimental Shopify product migration app (Python backend).",
+  "scripts": {
+    "check:js": "node --check public/app.js",
+    "shopify": "shopify"
+  }
+}

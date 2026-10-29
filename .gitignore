@@ -1,0 +1,26 @@
+# Local secrets, credentials, live store packages and data
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+/data/
+/volumes/
+*.sqlite3
+*.db
+*.zip
+
+# Python and Node runtime artifacts
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+node_modules/
+.cache/
+.DS_Store
+
+# Keep actual Shopify app configurations private/local; examples are tracked.
+/shopify.app.toml
+/shopify.app.*.toml

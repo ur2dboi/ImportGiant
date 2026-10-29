@@ -1,0 +1,18 @@
+# Copy to ../shopify.app.destination.toml and replace the placeholders.
+# Create this as a SEPARATE app/deployment from the source.
+client_id = "REPLACE_WITH_DESTINATION_APP_CLIENT_ID"
+name = "ImportGiant Destination Import"
+application_url = "https://REPLACE_WITH_DESTINATION_HTTPS_HOST"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = false
+
+[access_scopes]
+scopes = "read_products,read_inventory,write_products,write_inventory,write_files"
+
+[auth]
+redirect_urls = []
+
+[webhooks]
+api_version = "2026-07"

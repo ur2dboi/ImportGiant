@@ -1,0 +1,34 @@
+IMPORTGIANT — START HERE
+
+This is an experimental product migration app, not a completed Matrixify replacement.
+No Shopify store has been connected or changed by this package.
+
+WHAT YOU HAVE
+- A source-store app intended to export products, variants, images and accessible
+  product metafield values with read-only Shopify access.
+- A separate destination-store app intended to import new products as drafts,
+  after you explicitly authorize and confirm the destination.
+- GitHub-safe source code, a Dockerfile, example Shopify configurations and tests.
+
+IMPORTANT
+The Shopify connection, app installation and actual migration have NOT been tested
+on a real store or independently security-reviewed. A development-store test and
+security review are needed before using this on a valuable store. Migration files
+are not encrypted. Scheduling, spreadsheets, FTP/SFTP, sync and bulk editing are
+not part of this embedded migration build.
+
+WHAT TO DO NEXT
+1. Extract the ZIP on Windows.
+2. Open README.md and follow “Windows: put the source in GitHub” to create and
+   push to a private GitHub repository. Do not upload Shopify secrets or store data.
+3. Choose a hosting provider that supports Docker, HTTPS and two private persistent
+   volumes. GitHub by itself does not host this app, and Shopify cannot install
+   this source ZIP directly.
+4. Read DEPLOYMENT.md. You will need separate source and destination deployments
+   and Shopify apps. Start with two development stores; do not release changes to
+   your live app just to test these example configurations.
+5. Never send client secrets, access tokens, passwords or hosting credentials in
+   chat. Enter them directly into the hosting provider's secret manager.
+
+This package includes 14 offline tests; they simulate Shopify and do not prove a
+live migration will work.
